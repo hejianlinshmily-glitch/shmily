@@ -1,31 +1,754 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>我的第一个 GitHub Pages 页面</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-      background: #f7f7f7;
-      padding: 40px;
-    }
-    .card {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
-    }
-    h1 { margin-top: 0; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寻觅物联阿里店铺深度调研报告</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif; background-color: #f0f2f5; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow { box-shadow: 0 10px 30px -10px rgba(0,0,0,0.08); }
+        
+        /* Modern Tabs */
+        .tab-container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+        .modern-tab {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .modern-tab.active {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            box-shadow: 0 4px 15px rgba(30, 41, 59, 0.3);
+            font-weight: 700;
+        }
+        .modern-tab:hover:not(.active) {
+            background-color: rgba(241, 245, 249, 0.8);
+            color: #2563eb;
+        }
+
+        /* Rank Badges & Styles */
+        .rank-badge {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+        .rank-1-border { border: 2px solid #fbbf24; } /* Gold */
+        .rank-2-border { border: 2px solid #94a3b8; } /* Silver */
+        .rank-3-border { border: 2px solid #fdba74; } /* Bronze */
+        
+        /* Main Text Badge */
+        .main-text-badge {
+            background: linear-gradient(90deg, #eff6ff, #f5f3ff);
+            border-left: 4px solid #6366f1;
+        }
+
+        .sku-table-row:not(:last-child) { border-bottom: 1px solid #f8fafc; }
+        .sku-list::-webkit-scrollbar { width: 4px; }
+        .sku-list::-webkit-scrollbar-track { background: transparent; }
+        .sku-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .progress-bar { transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .stats-card { cursor: pointer; transition: all 0.3s ease; }
+        .stats-card.active { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15); border-color: currentColor; background-color: #fff; }
+        .stats-card:hover:not(.active) { transform: translateY(-2px); background-color: #fafafa; }
+
+        /* Search Input */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 4px 25px rgba(37, 99, 235, 0.15);
+            border-color: #93c5fd;
+        }
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body>
-  <div class="card">
-    <h1>🎉 页面成功打开</h1>
-    <p>如果你是在 <b>微信</b> 里看到这个页面，说明 GitHub Pages 已经配置成功。</p>
-    <p>接下来你可以把这里换成你真正的 HTML 内容。</p>
-  </div>
+<body class="text-slate-800 pb-20">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl lg:text-5xl font-black tracking-tight text-slate-900 mb-3">
+                寻觅物联 <span class="gradient-text">阿里店铺深度调研</span>
+            </h1>
+            <p class="text-slate-500 font-medium tracking-wide">基于 SKU 深度识别与全链路价格体系分析</p>
+        </header>
+
+        <!-- Search Bar (New Feature) -->
+        <section class="mb-8">
+            <div class="search-container">
+                <i class="fas fa-search search-icon text-lg"></i>
+                <input type="text" id="search-input" class="search-input" placeholder="搜索型号、关键词 (如: 4G, 宠物, 太阳能...)" oninput="handleSearch(this.value)">
+            </div>
+        </section>
+
+        <!-- 3. New Designed Tabs -->
+        <section class="flex justify-center mb-12">
+            <div class="tab-container p-1.5 rounded-full inline-flex flex-wrap justify-center gap-1" id="tab-container">
+                <!-- Tabs generated by JS -->
+            </div>
+        </section>
+
+        <!-- 1. 核心数据概览卡片 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Card 1 -->
+            <div onclick="filterByPrice('all')" id="card-all" class="stats-card bg-white rounded-2xl p-6 card-shadow border-t-4 border-t-blue-500 active group">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="bg-blue-50 text-blue-600 w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fas fa-layer-group text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-500 bg-blue-50 px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100 transition-colors">点击重置</span>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">当前SKU总数</p>
+                        <p class="text-3xl font-black text-slate-800" id="total-sku-count">0</p>
+                    </div>
+                    <div class="border-l border-slate-100 pl-4">
+                        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">当前产品数</p>
+                        <p class="text-3xl font-black text-slate-800" id="total-link-count">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div onclick="filterByPrice('entry')" id="card-entry" class="stats-card bg-white rounded-2xl p-6 card-shadow border-t-4 border-t-emerald-500 group">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-emerald-50 text-emerald-600 w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bolt text-lg"></i>
+                    </div>
+                    <p class="text-3xl font-black text-slate-800" id="entry-count">0</p>
+                </div>
+                <div class="mb-2">
+                    <p class="text-sm font-bold text-slate-700">入门引流 <span class="text-slate-400 font-normal text-xs ml-1">(&lt;60元)</span></p>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <div id="entry-bar" class="bg-emerald-500 h-2 rounded-full progress-bar" style="width: 0%"></div>
+                </div>
+                <p class="text-xs text-slate-400 mt-2 text-right font-medium">占比 <span id="entry-percent">0%</span></p>
+            </div>
+
+            <!-- Card 3 -->
+            <div onclick="filterByPrice('main')" id="card-main" class="stats-card bg-white rounded-2xl p-6 card-shadow border-t-4 border-t-violet-500 group">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-violet-50 text-violet-600 w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fas fa-fire text-lg"></i>
+                    </div>
+                    <p class="text-3xl font-black text-slate-800" id="main-count">0</p>
+                </div>
+                <div class="mb-2">
+                    <p class="text-sm font-bold text-slate-700">主流热销 <span class="text-slate-400 font-normal text-xs ml-1">(60-120元)</span></p>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <div id="main-bar" class="bg-violet-500 h-2 rounded-full progress-bar" style="width: 0%"></div>
+                </div>
+                <p class="text-xs text-slate-400 mt-2 text-right font-medium">占比 <span id="main-percent">0%</span></p>
+            </div>
+
+            <!-- Card 4 -->
+            <div onclick="filterByPrice('high')" id="card-high" class="stats-card bg-white rounded-2xl p-6 card-shadow border-t-4 border-t-orange-500 group">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-orange-50 text-orange-600 w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fas fa-crown text-lg"></i>
+                    </div>
+                    <p class="text-3xl font-black text-slate-800" id="high-count">0</p>
+                </div>
+                <div class="mb-2">
+                    <p class="text-sm font-bold text-slate-700">高端进阶 <span class="text-slate-400 font-normal text-xs ml-1">(>120元)</span></p>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <div id="high-bar" class="bg-orange-500 h-2 rounded-full progress-bar" style="width: 0%"></div>
+                </div>
+                <p class="text-xs text-slate-400 mt-2 text-right font-medium">占比 <span id="high-percent">0%</span></p>
+            </div>
+        </section>
+
+        <!-- 2. 价格分布图表区 -->
+        <section class="bg-white rounded-3xl p-8 card-shadow mb-12 relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl font-black text-slate-800 flex items-center">
+                        全店产品价格分布
+                        <span id="chart-subtitle" class="ml-4 text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-wide">全部</span>
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">展示各产品线的入门起售价梯度</p>
+                </div>
+                <div class="flex gap-2 mt-4 sm:mt-0">
+                    <div id="filter-badge" class="hidden flex items-center text-xs font-bold text-white bg-slate-800 px-3 py-1.5 rounded-full shadow-lg transition-all">
+                        <i class="fas fa-filter mr-2 text-blue-400"></i><span id="filter-name">筛选中</span>
+                    </div>
+                    <div class="flex items-center text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full">
+                        <i class="fas fa-sort-amount-down mr-2 text-slate-400"></i>已按销量降序
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-80">
+                <canvas id="priceChart"></canvas>
+            </div>
+        </section>
+
+        <!-- 4. 商品详情列表 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+            <!-- Cards generated by JS -->
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // === Data Source (Enhanced with 'mainText') ===
+        const products = [
+            {
+                id: 1,
+                model: "GF-07",
+                category: "车载强磁类",
+                mainText: "跨境专供 定位精准",
+                title: "GF07定位器 老人小孩防丢器GPS车载强磁免安装 GF07厂家",
+                sold: "10万+",
+                priceRange: "￥11 - ￥12",
+                basePrice: 11,
+                tags: ["跨境专供", "强磁吸附", "定位精准"],
+                skus: [
+                    { name: "GF07袋装", price: "￥11" },
+                    { name: "GF07软盒装", price: "￥11.5" },
+                    { name: "GF07盒装", price: "￥12" }
+                ]
+            },
+            {
+                id: 2,
+                model: "Q系列",
+                category: "车载强磁类",
+                mainText: "4G全系列 高清轨迹",
+                title: "车载GPS追踪器 4G远程定位器 强磁吸附 防盗防丢 全球定位长待机",
+                sold: "4200+",
+                priceRange: "￥32 - ￥115",
+                basePrice: 32,
+                tags: ["4G全网通", "超长待机", "高清轨迹"],
+                skus: [
+                    { name: "Q7(4G)", price: "￥32" },
+                    { name: "Q8(4G) 1200mAh", price: "￥43" },
+                    { name: "Q10(4G) 5500mAh", price: "￥65" },
+                    { name: "Q12 国内版 20000mAh", price: "￥115" }
+                ]
+            },
+            {
+                id: 3,
+                model: "Mini A8",
+                category: "便携防丢类",
+                mainText: "跨境专供 智能定位",
+                title: "A8定位器 车载GPS防盗器 老人小孩宠物防丢SOS紧急报警器GPS定位",
+                sold: "3700+",
+                priceRange: "￥18 - ￥18.5",
+                basePrice: 18,
+                tags: ["SOS紧急报警", "小巧便携", "LBS定位"],
+                skus: [
+                    { name: "A8袋装", price: "￥18" },
+                    { name: "A8盒装", price: "￥18.5" }
+                ]
+            },
+            {
+                id: 4,
+                model: "太阳能款",
+                category: "行业定制类",
+                mainText: "畜牧守护 牛羊管家",
+                title: "牛羊定位器 智能4G北斗畜牧农场定位防丢器 太阳能防水定位器厂家",
+                sold: "40+",
+                priceRange: "￥165 - ￥180",
+                basePrice: 165,
+                tags: ["太阳能充电", "IP67防水", "畜牧专用"],
+                skus: [
+                    { name: "基础款 (单机+包装)", price: "￥165" },
+                    { name: "标准款 (单机+项圈)", price: "￥180" }
+                ]
+            },
+            {
+                id: 5,
+                model: "PG08/A18",
+                category: "物流货运类",
+                mainText: "物流运输 车队管理",
+                title: "4G爆款gps定位器 车载接线款电车摩托车智能追踪防丢防盗厂家直销",
+                sold: "5500+",
+                priceRange: "￥29 - ￥42",
+                basePrice: 29,
+                tags: ["接线款", "断油电", "车队管理"],
+                skus: [
+                    { name: "PG08两线 (2G)", price: "￥29" },
+                    { name: "A18四线 (4G)", price: "￥37" },
+                    { name: "A18四线+继电器", price: "￥42" }
+                ]
+            },
+            {
+                id: 6,
+                model: "GF-22",
+                category: "便携防丢类",
+                mainText: "多重定位 防盗追踪",
+                title: "GF22北斗GPS定位器 车载强磁免安装老人小孩宠物防丢器 智能追踪",
+                sold: "2300+",
+                priceRange: "￥32 - ￥33",
+                basePrice: 32,
+                tags: ["多重定位", "SOS键", "强磁吸附"],
+                skus: [
+                    { name: "GF22袋装", price: "￥32" },
+                    { name: "GF22盒装", price: "￥33" }
+                ]
+            },
+            {
+                id: 7,
+                model: "P系列",
+                category: "车载强磁类",
+                mainText: "多重定位 强磁吸附",
+                title: "GPS定位器 车载北斗卫星定位终端 汽车强磁免安装防盗追踪器厂家",
+                sold: "100+",
+                priceRange: "￥36 - ￥82",
+                basePrice: 36,
+                tags: ["原厂供货", "多规格可选", "强磁"],
+                skus: [
+                    { name: "P6 (1000毫安)", price: "￥36" },
+                    { name: "P2 (3000毫安)", price: "￥56" },
+                    { name: "P5 (10000毫安)", price: "￥82" }
+                ]
+            },
+            {
+                id: 8,
+                model: "D8/D9 OBD",
+                category: "物流货运类",
+                mainText: "即插即用 永不断电",
+                title: "GPS定位器 4G北斗卫星定位即插即用免安装 车载OBD接口防丢防盗",
+                sold: "1800+",
+                priceRange: "￥45 - ￥48",
+                basePrice: 45,
+                tags: ["OBD接口", "即插即用", "永不断电"],
+                skus: [
+                    { name: "D8-2G", price: "￥45" },
+                    { name: "D9-4G", price: "￥48" }
+                ]
+            },
+            {
+                id: 9,
+                model: "M10",
+                category: "便携防丢类",
+                mainText: "宠物定位 智能防丢",
+                title: "AI智能项圈宠物防丢器 GPS定位器跟踪 实时追踪 安全防走失定位器",
+                sold: "60+",
+                priceRange: "￥75 - ￥105",
+                basePrice: 75,
+                tags: ["宠物专用", "防水项圈", "4G全网通"],
+                skus: [
+                    { name: "M10-A(600mHa)", price: "￥75" },
+                    { name: "M10-G(全球版)", price: "￥105" }
+                ]
+            },
+            {
+                id: 10,
+                model: "D6车充",
+                category: "行业定制类",
+                mainText: "即插即用 智能车充",
+                title: "4G车充北斗GPS定位器防丢防盗智能追踪 免安装车载双USB快充",
+                sold: "40+",
+                priceRange: "￥50 - ￥62",
+                basePrice: 50,
+                tags: ["隐蔽性强", "双USB快充", "点烟器口"],
+                skus: [
+                    { name: "D6-4G", price: "￥50" },
+                    { name: "D5-2G", price: "￥62" }
+                ]
+            },
+            {
+                id: 11,
+                model: "M4/M5",
+                category: "便携防丢类",
+                mainText: "双向通话 安全守护",
+                title: "GPS定位器 随身携带纽扣式定位器 SOS一键报警器 老人小孩防丢器",
+                sold: "20+",
+                priceRange: "￥62 - ￥72",
+                basePrice: 62,
+                tags: ["双向通话", "纽扣式", "语音监护"],
+                skus: [
+                    { name: "M1 / M2", price: "￥62" },
+                    { name: "M4", price: "￥67" },
+                    { name: "M5", price: "￥72" }
+                ]
+            },
+            {
+                id: 12,
+                model: "PG07",
+                category: "物流货运类",
+                mainText: "高精定位 即插即用",
+                title: "4G北斗gps定位器汽车电动车摩托车通用防盗防丢追踪可远程断油电",
+                sold: "800+",
+                priceRange: "￥32 - ￥45",
+                basePrice: 32,
+                tags: ["远程断油电", "宽电压", "震动报警"],
+                skus: [
+                    { name: "PG07-2线", price: "￥32" },
+                    { name: "PG07-4线+继电器", price: "￥40" }
+                ]
+            }
+        ];
+
+        let myPriceChart = null;
+        const categories = ["全部", ...new Set(products.map(p => p.category))];
+        const categoryIcons = {
+            "全部": "fa-th-large",
+            "车载强磁类": "fa-magnet",
+            "便携防丢类": "fa-user-shield",
+            "物流货运类": "fa-truck-fast",
+            "行业定制类": "fa-industry"
+        };
+
+        let currentCategory = "全部";
+        let currentPriceFilter = "all";
+        let currentSearchQuery = "";
+
+        function getSalesNum(str) {
+            let numStr = str.replace('+', '').replace(',', '').trim();
+            if (numStr.includes('万')) {
+                return parseFloat(numStr.replace('万', '')) * 10000;
+            }
+            return parseInt(numStr) || 0;
+        }
+
+        function handleSearch(query) {
+            currentSearchQuery = query.toLowerCase();
+            renderData();
+        }
+
+        // === 1. Render Logic (Refined for Stats Sync) ===
+        function renderData() {
+            // Step 1: Filter by Category & Search (Base List for Stats)
+            let distributionList = products;
+            
+            if (currentCategory !== "全部") {
+                distributionList = distributionList.filter(p => p.category === currentCategory);
+            }
+
+            if (currentSearchQuery) {
+                distributionList = distributionList.filter(p => 
+                    p.title.toLowerCase().includes(currentSearchQuery) || 
+                    p.model.toLowerCase().includes(currentSearchQuery) ||
+                    p.tags.some(t => t.toLowerCase().includes(currentSearchQuery))
+                );
+            }
+
+            // Step 2: Filter by Price (Display List for Grid & Total)
+            let displayList = [...distributionList];
+
+            if (currentPriceFilter !== 'all') {
+                displayList = displayList.filter(p => {
+                    const price = parseFloat(p.priceRange.split('-').pop().replace('￥', ''));
+                    if (currentPriceFilter === 'entry') return price < 60;
+                    if (currentPriceFilter === 'main') return price >= 60 && price <= 120;
+                    if (currentPriceFilter === 'high') return price > 120;
+                    return true;
+                });
+            }
+
+            // Step 3: Sort
+            displayList.sort((a, b) => getSalesNum(b.sold) - getSalesNum(a.sold));
+
+            // Step 4: Update UI
+            // PASS TWO LISTS: 
+            // 1. distributionList -> To calculate available counts for Entry/Main/High cards (so they act as filters)
+            // 2. displayList -> To update Total Card (Card 1) to show what user actually sees
+            updateStatsUI(distributionList, displayList); 
+            
+            updateChart(displayList);
+            renderProducts(displayList);
+            updateFilterBadges();
+        }
+
+        function filterByPrice(range) {
+            currentPriceFilter = range;
+            renderData();
+        }
+
+        function switchTab(cat) {
+            currentCategory = cat;
+            currentPriceFilter = 'all';
+            renderTabs();
+            renderData();
+        }
+
+        // === 2. Stats UI Updates (Fixed Logic) ===
+        function updateStatsUI(distList, dispList) {
+            // A. Calculate Total SKU/Links based on DISPLAY LIST (what user sees)
+            let totalSKUs = 0;
+            let totalLinks = dispList.length;
+            
+            dispList.forEach(p => {
+                totalSKUs += p.skus.length;
+            });
+
+            // B. Calculate Distributions based on DISTRIBUTION LIST (available options in current category/search)
+            let entry = 0, main = 0, high = 0;
+            let distTotal = distList.length;
+            
+            distList.forEach(p => {
+                const maxPrice = parseFloat(p.priceRange.split('-').pop().replace('￥', ''));
+                if (maxPrice < 60) entry++;
+                else if (maxPrice <= 120) main++;
+                else high++;
+            });
+
+            const entryPct = distTotal > 0 ? Math.round((entry / distTotal) * 100) : 0;
+            const mainPct = distTotal > 0 ? Math.round((main / distTotal) * 100) : 0;
+            const highPct = distTotal > 0 ? Math.round((high / distTotal) * 100) : 0;
+
+            // Update DOM
+            animateValue("total-sku-count", parseInt(document.getElementById('total-sku-count').innerText)||0, totalSKUs, 500);
+            animateValue("total-link-count", parseInt(document.getElementById('total-link-count').innerText)||0, totalLinks, 500);
+            
+            animateValue("entry-count", parseInt(document.getElementById('entry-count').innerText)||0, entry, 500);
+            animateValue("main-count", parseInt(document.getElementById('main-count').innerText)||0, main, 500);
+            animateValue("high-count", parseInt(document.getElementById('high-count').innerText)||0, high, 500);
+
+            document.getElementById('entry-percent').innerText = entryPct + "%";
+            document.getElementById('main-percent').innerText = mainPct + "%";
+            document.getElementById('high-percent').innerText = highPct + "%";
+            document.getElementById('entry-bar').style.width = entryPct + "%";
+            document.getElementById('main-bar').style.width = mainPct + "%";
+            document.getElementById('high-bar').style.width = highPct + "%";
+
+            // Active State
+            document.querySelectorAll('.stats-card').forEach(el => el.classList.remove('active', 'border-current', 'bg-gray-50'));
+            if(currentPriceFilter === 'all') document.getElementById('card-all').classList.add('active');
+            if(currentPriceFilter === 'entry') document.getElementById('card-entry').classList.add('active');
+            if(currentPriceFilter === 'main') document.getElementById('card-main').classList.add('active');
+            if(currentPriceFilter === 'high') document.getElementById('card-high').classList.add('active');
+        }
+
+        function updateFilterBadges() {
+            const badge = document.getElementById('filter-badge');
+            const nameSpan = document.getElementById('filter-name');
+            const subTitle = document.getElementById('chart-subtitle');
+
+            let title = currentCategory;
+            if(currentSearchQuery) title += ` + 搜索: "${currentSearchQuery}"`;
+            subTitle.innerText = title;
+
+            if (currentPriceFilter !== 'all') {
+                badge.classList.remove('hidden');
+                badge.classList.add('flex');
+                if(currentPriceFilter === 'entry') nameSpan.innerText = "入门引流 (<60元)";
+                if(currentPriceFilter === 'main') nameSpan.innerText = "主流热销 (60-120元)";
+                if(currentPriceFilter === 'high') nameSpan.innerText = "高端进阶 (>120元)";
+            } else {
+                badge.classList.add('hidden');
+                badge.classList.remove('flex');
+            }
+        }
+
+        function animateValue(id, start, end, duration) {
+            if (start === end) return;
+            const range = end - start;
+            let current = start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / range));
+            const obj = document.getElementById(id);
+            const timer = setInterval(function() {
+                current += increment;
+                obj.innerHTML = current;
+                if (current == end) clearInterval(timer);
+            }, stepTime > 0 ? stepTime : 10);
+        }
+
+        // === 3. Chart ===
+        function updateChart(filteredProducts) {
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            const labels = filteredProducts.map(p => p.model);
+            const data = filteredProducts.map(p => p.basePrice);
+
+            if (myPriceChart) myPriceChart.destroy();
+
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, '#6366f1'); 
+            gradient.addColorStop(1, '#8b5cf6'); 
+
+            myPriceChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '起售价格 (RMB)',
+                        data: data,
+                        backgroundColor: gradient,
+                        borderRadius: 8,
+                        barPercentage: 0.5,
+                        categoryPercentage: 0.8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 600, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            padding: 12,
+                            cornerRadius: 8,
+                            callbacks: { label: ctx => ' 起售价: ￥' + ctx.parsed.y }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#e2e8f0', borderDash: [4, 4] },
+                            ticks: { font: { family: 'Noto Sans SC' }, color: '#64748b' },
+                            border: { display: false }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { family: 'Noto Sans SC' }, color: '#64748b' },
+                            border: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // === 4. Tabs ===
+        function renderTabs() {
+            const container = document.getElementById('tab-container');
+            container.innerHTML = categories.map(cat => {
+                const isActive = cat === currentCategory;
+                return `
+                <button 
+                    onclick="switchTab('${cat}')"
+                    class="modern-tab px-6 py-2.5 rounded-full text-sm flex items-center gap-2 
+                    ${isActive ? 'active' : 'text-slate-600'}">
+                    ${cat === '全部' ? '<i class="fas fa-th-large text-xs"></i>' : ''}
+                    ${cat}
+                </button>
+            `}).join('');
+        }
+
+        // === 5. Product Grid ===
+        function renderProducts(filteredList) {
+            const container = document.getElementById('product-grid');
+            if (filteredList.length === 0) {
+                container.innerHTML = `<div class="col-span-full flex flex-col items-center justify-center py-20 text-slate-400">
+                    <i class="fas fa-search text-4xl mb-4 text-slate-300"></i>
+                    <p>该筛选条件下暂无商品</p>
+                </div>`;
+                return;
+            }
+            container.innerHTML = filteredList.map((p, index) => {
+                // Ranking Logic
+                let rankHTML = '';
+                let cardClass = 'bg-white';
+                let paddingClass = 'pl-5'; // Default padding if NO rank badge
+
+                if (index === 0) {
+                    rankHTML = `<div class="absolute top-0 left-0 z-20 rank-badge bg-gradient-to-b from-amber-300 to-amber-500 text-white w-12 h-16 flex flex-col items-center justify-start pt-2 shadow-lg"><i class="fas fa-trophy text-xs mb-0.5"></i><span class="font-bold text-lg leading-none">1</span></div>`;
+                    cardClass = 'bg-white rank-1-border transform -translate-y-2 shadow-xl';
+                    paddingClass = 'pl-14'; // Padding to accommodate badge
+                } else if (index === 1) {
+                    rankHTML = `<div class="absolute top-0 left-0 z-20 rank-badge bg-gradient-to-b from-slate-300 to-slate-400 text-white w-10 h-14 flex flex-col items-center justify-start pt-2 shadow"><i class="fas fa-trophy text-[10px] mb-0.5"></i><span class="font-bold text-base leading-none">2</span></div>`;
+                    cardClass = 'bg-white rank-2-border';
+                    paddingClass = 'pl-12';
+                } else if (index === 2) {
+                    rankHTML = `<div class="absolute top-0 left-0 z-20 rank-badge bg-gradient-to-b from-orange-300 to-orange-400 text-white w-10 h-14 flex flex-col items-center justify-start pt-2 shadow"><i class="fas fa-trophy text-[10px] mb-0.5"></i><span class="font-bold text-base leading-none">3</span></div>`;
+                    cardClass = 'bg-white rank-3-border';
+                    paddingClass = 'pl-12';
+                }
+
+                return `
+                <div class="${cardClass} rounded-2xl overflow-hidden card-shadow hover:shadow-2xl transition-all duration-300 flex flex-col h-full relative group">
+                    ${rankHTML}
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl z-10 shadow-sm tracking-wider">XUNMI</div>
+                    
+                    <div class="p-6 border-b border-slate-100 bg-white ${paddingClass}">
+                        <div class="main-text-badge inline-block px-3 py-1 rounded-r-full mb-3 shadow-sm">
+                            <span class="text-xs font-black text-indigo-600 uppercase tracking-wide">${p.mainText || '新品上市'}</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200 uppercase tracking-wide">${p.model}</span>
+                            <span class="text-xs text-slate-400 flex items-center font-medium"><i class="fas fa-fire-alt text-rose-500 mr-1"></i> ${p.sold}</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-sm leading-relaxed line-clamp-2 h-10 group-hover:text-blue-600 transition-colors" title="${p.title}">${p.title}</h3>
+                    </div>
+
+                    <div class="p-6 flex-grow bg-white">
+                        <div class="mb-5 flex items-baseline">
+                            <span class="text-xs text-slate-400 font-medium mr-1">RMB</span>
+                            <span class="text-3xl font-black text-blue-600 tracking-tight">${p.priceRange.split('-')[0].replace('￥','')}</span>
+                            <span class="text-xs text-slate-400 ml-1">起</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${p.tags.map(tag => `<span class="text-[10px] border border-blue-100 text-blue-600 px-2.5 py-1 rounded-lg bg-blue-50 font-medium">${tag}</span>`).join('')}
+                        </div>
+                        <div class="text-xs text-slate-400 border-t border-dashed border-slate-100 pt-4 flex items-center">
+                            <i class="fas fa-check-circle mr-1.5 text-emerald-400"></i> 深圳实力工厂 | 现货极速发
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50/50 p-4 border-t border-slate-100">
+                        <div class="text-[10px] text-slate-400 uppercase font-bold mb-3 flex justify-between tracking-wider">
+                            <span>规格报价</span>
+                            <span class="text-blue-500 bg-blue-50 px-1.5 rounded">${p.skus.length} SKUs</span>
+                        </div>
+                        <div class="sku-list max-h-28 overflow-y-auto pr-2 space-y-1">
+                            ${p.skus.map(sku => `
+                                <div class="sku-table-row flex justify-between items-center py-1.5 px-2 rounded hover:bg-white hover:shadow-sm transition-all text-xs">
+                                    <span class="text-slate-600 truncate w-2/3 pr-2 font-medium" title="${sku.name}">${sku.name}</span>
+                                    <span class="font-black text-slate-800 w-1/3 text-right">${sku.price}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // === Init ===
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTabs();
+            renderData();
+        });
+    </script>
 </body>
 </html>
