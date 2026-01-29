@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS定位器-阿里平台竞品调研报告 (8店全链路对比)</title>
+    <title>GPS定位器-阿里平台竞品调研报告 (9店全链路对比)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
@@ -22,14 +22,14 @@
         }
         .card-shadow { box-shadow: 0 10px 30px -10px rgba(0,0,0,0.08); }
         
-        /* Pill Tabs Styles (General) */
+        /* Pill Tabs Styles */
         .pill-tab {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 1;
         }
         
-        /* Category Tabs (Smaller, lighter) */
+        /* Category Tabs */
         .cat-tab.active {
             background-color: #1e293b; /* Slate 800 */
             color: #ffffff;
@@ -41,7 +41,7 @@
             color: #334155;
         }
 
-        /* Shop Tabs (Larger, Gradient) */
+        /* Shop Tabs */
         .shop-tab.active {
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: white;
@@ -54,7 +54,7 @@
             color: #0284c7;
         }
 
-        /* Rank Badges & Styles */
+        /* Rank Badges */
         .rank-badge {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
         }
@@ -120,7 +120,7 @@
             <h1 class="text-3xl lg:text-5xl font-black tracking-tight text-slate-900 mb-3">
                 GPS定位器 <span class="gradient-text">- 阿里平台</span>
             </h1>
-            <p class="text-slate-500 font-medium tracking-wide text-xs sm:text-base">途强 | 星迈 | 斯沃德 | 阿菠萝 | 超寻 | 卓比 | 信春 | 寻觅</p>
+            <p class="text-slate-500 font-medium tracking-wide text-xs sm:text-base">芯跃 | 途强 | 星迈 | 斯沃德 | 阿菠萝 | 超寻 | 卓比 | 信春 | 寻觅</p>
         </header>
 
         <!-- Search Bar -->
@@ -178,7 +178,7 @@
                     <p class="text-3xl font-black text-slate-800" id="entry-count">0</p>
                 </div>
                 <div class="mb-2">
-                    <p class="text-sm font-bold text-slate-700">入门引流 <span class="text-slate-400 font-normal text-xs ml-1">(&lt;40元)</span></p>
+                    <p class="text-sm font-bold text-slate-700">入门引流 <span class="text-slate-400 font-normal text-xs ml-1">(&lt;50元)</span></p>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                     <div id="entry-bar" class="bg-emerald-500 h-2 rounded-full progress-bar" style="width: 0%"></div>
@@ -195,7 +195,7 @@
                     <p class="text-3xl font-black text-slate-800" id="main-count">0</p>
                 </div>
                 <div class="mb-2">
-                    <p class="text-sm font-bold text-slate-700">主流热销 <span class="text-slate-400 font-normal text-xs ml-1">(40-100元)</span></p>
+                    <p class="text-sm font-bold text-slate-700">主流热销 <span class="text-slate-400 font-normal text-xs ml-1">(50-120元)</span></p>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                     <div id="main-bar" class="bg-violet-500 h-2 rounded-full progress-bar" style="width: 0%"></div>
@@ -212,7 +212,7 @@
                     <p class="text-3xl font-black text-slate-800" id="high-count">0</p>
                 </div>
                 <div class="mb-2">
-                    <p class="text-sm font-bold text-slate-700">高端/定制 <span class="text-slate-400 font-normal text-xs ml-1">(>100元)</span></p>
+                    <p class="text-sm font-bold text-slate-700">高端/定制 <span class="text-slate-400 font-normal text-xs ml-1">(>120元)</span></p>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                     <div id="high-bar" class="bg-orange-500 h-2 rounded-full progress-bar" style="width: 0%"></div>
@@ -486,7 +486,7 @@
             { id: "xm6", shop: "星迈", model: "V2", category: "海外/全球GPS", mainText: "8线高配 IP67防水", title: "定制款 gps车载接线定位器追踪器免充电车辆管理", sold: "1600+", basePrice: 88, tags: ["SOS求救", "IP67防水", "断油电"], skus: [{ name: "欧亚非/南美 4线", price: "￥88" }, { name: "全球版 4线", price: "￥113" }, { name: "全球版 8线", price: "￥115" }] },
             { id: "xm7", shop: "星迈", model: "GT07E", category: "行业定制款", mainText: "太阳能充电 落水检测", title: "4G GPS定位器 太阳能定位器 渔船GPS追踪器货落水检测", sold: "1300+", basePrice: 420, tags: ["无限续航", "深度防水", "紧急报警"], skus: [{ name: "1套起定", price: "￥420" }] },
             { id: "xm8", shop: "星迈", model: "V8", category: "车载接线款", mainText: "性价比之王 极速定位", title: "4G全网通定位器GPS定位器电动车防丢器车载定位器", sold: "1200+", basePrice: 45, tags: ["国内版", "断油电", "轨迹回放"], skus: [{ name: "5台起批", price: "￥49" }, { name: "≥1000台", price: "￥45" }] },
-            { id: "xm9", shop: "星迈", model: "C059 成品", category: "宠物定位器", mainText: "宠物防丢 精致小巧", title: "4G宠物猫狗追踪器防水防丢定位神器声光寻宠", sold: "900+", basePrice: 175, tags: ["欧亚非/南美", "IP67防水", "声光寻宠"], skus: [{ name: "欧亚非版(700mAh)", price: "￥175" }, { name: "南美版(700mAh)", price: "￥175" }] },
+            { id: "xm9", shop: "星迈", model: "C059 成品", category: "4G外贸宠物牛羊款", mainText: "宠物防丢 精致小巧", title: "4G宠物猫狗追踪器防水防丢定位神器声光寻宠", sold: "900+", basePrice: 175, tags: ["欧亚非/南美", "IP67防水", "声光寻宠"], skus: [{ name: "欧亚非版(700mAh)", price: "￥175" }, { name: "南美版(700mAh)", price: "￥175" }] },
             { id: "xm10", shop: "星迈", model: "MC101", category: "行车记录仪", mainText: "视频监控 远程回放", title: "4Ggps汽车定位器高清远程视频监控车载行车记录仪", sold: "700+", basePrice: 195, tags: ["车队管理", "电子围栏", "视频回传"], skus: [{ name: "国内版", price: "￥195" }] },
             { id: "xm11", shop: "星迈", model: "3年长待", category: "超长待机款", mainText: "三年免充 强磁吸附", title: "三年待机 GPS无线强磁吸附车载定位器 强信号远程防丢", sold: "500+", basePrice: 108, tags: ["4200mAh", "免安装", "防拆报警"], skus: [{ name: "欧亚非/南美版", price: "￥108" }, { name: "北美版(4G+2G+NB)", price: "￥140" }] },
             { id: "xm12", shop: "星迈", model: "GT76C", category: "海外/全球GPS", mainText: "超大电池 20000mAh", title: "4G GPS无线免安装车载无线强磁吸附GPS追踪器", sold: "400+", basePrice: 280, tags: ["南美版", "超长续航", "防拆报警"], skus: [{ name: "南美版(2W毫安)", price: "￥280" }] },
@@ -500,17 +500,49 @@
             { id: "xm20", shop: "星迈", model: "X8 卫星", category: "纯北斗款", mainText: "铱星通讯 全球无盲区", title: "全网络通信智能终端卫星通讯智能定位器GPS定位方案", sold: "方案", basePrice: 1888, tags: ["铱星卫星", "双SIM卡", "工业级"], skus: [{ name: "5块起定", price: "￥1888" }] },
             { id: "xm21", shop: "星迈", model: "C035", category: "牛羊定位器", mainText: "牛羊专用 大电量", title: "北斗牛羊马专用4G无线GPS智能定位器大电量放牧防走丢器", sold: "80+", basePrice: 262, tags: ["IP67防水", "超长待机", "轨迹查询"], skus: [{ name: "C035 国内版", price: "￥262" }] },
             { id: "xm22", shop: "星迈", model: "C023C", category: "海外/全球GPS", mainText: "隐蔽继电器式", title: "断油断电继电器款定位器车载防盗摩托车电动车追踪器", sold: "100+", basePrice: 75, tags: ["隐蔽安装", "断油电", "全球通用"], skus: [{ name: "全球2G", price: "￥75" }, { name: "国内4G", price: "￥86" }, { name: "全球4G", price: "￥128" }] },
-            { id: "xm23", shop: "星迈", model: "X5D", category: "海外/全球GPS", mainText: "金属外壳 精准防盗", title: "GPS/BDS双星定位模块车辆管理防盗4G北斗GPS定位器", sold: "8800+", basePrice: 180, tags: ["全球版", "CAT 1", "车联网终端"], skus: [{ name: "全球版(180mAh)", price: "￥180" }] },
+            { id: "xm23", shop: "星迈", model: "X5D", category: "海外/全球GPS", mainText: "金属外壳 精准防盗", title: "GPS/BDS双星定位模块车辆管理防盗4G北斗GPS定位器", sold: "0", basePrice: 180, tags: ["全球版", "CAT 1", "车联网终端"], skus: [{ name: "全球版(180mAh)", price: "￥180" }] },
             { id: "xm24", shop: "星迈", model: "C003F", category: "海外/全球GPS", mainText: "工业接口 RS485", title: "跨境全球版4G汽车GPS车载定位器防盗摩托电动车防", sold: "300+", basePrice: 126, tags: ["R232/485", "SOS求救", "扩展性强"], skus: [{ name: "国内版", price: "￥126" }, { name: "全球版", price: "￥203" }] },
             { id: "xm25", shop: "星迈", model: "NB-IOT", category: "PCBA方案定制", mainText: "窄带物联网 低功耗", title: "GPS+GSM+GPRS模块车载追踪GPRS防盗GPS定位器定制PCBA", sold: "30+", basePrice: 83, tags: ["NB-IOT", "宽电压", "断油电"], skus: [{ name: "5块起定", price: "￥83" }] },
             { id: "xm26", shop: "星迈", model: "C033", category: "海外/全球GPS", mainText: "卡片式 超薄定位", title: "700毫安卡片机4G汽车GPS定位器防盗器振动报警车载", sold: "20+", basePrice: 121, tags: ["人员定位", "箱包防丢", "SOS求救"], skus: [{ name: "国内版(700mAh)", price: "￥121" }] },
             { id: "xm27", shop: "星迈", model: "C032 方案", category: "PCBA方案定制", mainText: "宠物定位 按键求救", title: "GPS宠物定位器4GGPS定位器 智能防丢器方案PCBA模块", sold: "少量", basePrice: 295, tags: ["自定义按键", "声光寻宠", "高性能天线"], skus: [{ name: "5块起定", price: "￥295" }] },
-            { id: "xm28", shop: "星迈", model: "C032", category: "宠物定位器", mainText: "宠物防丢 游泳防水", title: "狗狗猫咪定位器GPS追踪器宠物防走丢神器 + 声光寻宠", sold: "8800+", basePrice: 189, tags: ["国内版", "IP67防水", "磁吸充电"], skus: [{ name: "国内版(700mAh)", price: "￥189" }] },
-            { id: "xm29", shop: "星迈", model: "C005E", category: "OBD定位器", mainText: "故障诊断 经济款", title: "车载4G OBD定位器4G GPS定位器 汽车故障诊断检测仪免安装", sold: "8800+", basePrice: 223, tags: ["CAN BUS", "故障码读取", "全球版"], skus: [{ name: "国内版", price: "￥223" }, { name: "欧亚非版", price: "￥419" }, { name: "南美版", price: "￥470" }] }
+            { id: "xm28", shop: "星迈", model: "C032", category: "宠物定位器", mainText: "宠物防丢 游泳防水", title: "狗狗猫咪定位器GPS追踪器宠物防走丢神器 + 声光寻宠", sold: "0", basePrice: 189, tags: ["国内版", "IP67防水", "磁吸充电"], skus: [{ name: "国内版(700mAh)", price: "￥189" }] },
+            { id: "xm29", shop: "星迈", model: "C005E", category: "OBD定位器", mainText: "故障诊断 经济款", title: "车载4G OBD定位器4G GPS定位器 汽车故障诊断检测仪免安装", sold: "0", basePrice: 223, tags: ["CAN BUS", "故障码读取", "全球版"], skus: [{ name: "国内版", price: "￥223" }, { name: "欧亚非版", price: "￥419" }, { name: "南美版", price: "￥470" }] }
+        ];
+
+        // 9. 芯跃智联 (Xinyue) - New Integration
+        const rawXinyueData = [
+            { id: "xc_new_1", shop: "芯跃智联", model: "车载OBD", category: "OBD定位器", mainText: "免安装 免充电", title: "OBD定位器汽车载追踪追踪跟踪神器车辆定位防盗免安装不充电gps", sold: "200+", basePrice: 45.00, tags: ["实时定位", "免接线", "永不断电"], skus: [{ name: "4G版", price: "￥45.00" }, { name: "4G+年卡", price: "￥50.00" }] },
+            { id: "xc_new_2", shop: "芯跃智联", model: "接线通用款", category: "车载接线款", mainText: "全车型通用", title: "gps汽车接线实时定位器追踪仪免充电长待机电动摩托车追踪防盗器", sold: "1400+", basePrice: 35.00, tags: ["北斗+GPS", "防拆提醒", "方案定制"], skus: [{ name: "4G版", price: "￥35.00" }, { name: "4G版+断油电", price: "￥45.00" }, { name: "4G全球版", price: "￥106.00" }] },
+            { id: "xc_new_3", shop: "芯跃智联", model: "XY系列", category: "免安装充电款", mainText: "强磁免安装", title: "4G免安装gps定位器 汽车卫星报警器 强磁车辆车载防丢器实时定位", sold: "1000+", basePrice: 49.00, tags: ["低功耗", "远程开关机", "充值分润"], skus: [{ name: "XY107 (7-15天)", price: "￥49.00" }, { name: "XY102 (15-25天)", price: "￥68.00" }, { name: "XY601 (3-4个月)", price: "￥158.00" }] },
+            { id: "xc_new_4", shop: "芯跃智联", model: "306智能款", category: "海外/全球GPS", mainText: "跨境专供", title: "4G北斗GPS定位器 接线汽车摩托车货车电动车防盗器远程断油断电", sold: "500+", basePrice: 30.00, tags: ["4G通讯", "全球定位", "实力工厂"], skus: [{ name: "4G版(不含卡)", price: "￥30.00" }, { name: "306汽车智能款", price: "￥76.80" }] },
+            { id: "xc_new_5", shop: "芯跃智联", model: "XY103/101", category: "免安装充电款", mainText: "资产管理专用", title: "4G汽车金融gps定位器物流运输车载追踪防丢器无线4G强磁定位器", sold: "400+", basePrice: 43.20, tags: ["超长续航", "强磁吸附", "汽车租赁"], skus: [{ name: "XY103 (4G版)", price: "￥43.20" }, { name: "XY108 高端款", price: "￥138.00" }] },
+            { id: "xc_new_6", shop: "芯跃智联", model: "挂坠/手环", category: "人员定位款", mainText: "儿童老人定位", title: "4G老人儿童定位器gps追踪老人痴呆防走失订位手环老人防走丢神器", sold: "300+", basePrice: 139.00, tags: ["双向通话", "终生免费", "小体积"], skus: [{ name: "标准版", price: "￥139.00" }, { name: "批量价", price: "￥123.00" }] },
+            { id: "xc_new_7", shop: "芯跃智联", model: "跨境多频段", category: "海外/全球GPS", mainText: "全球版接线", title: "跨境全球4G汽车GPS北斗卫星车载定位摩托电动车防盗追踪器tracker", sold: "300+", basePrice: 39.00, tags: ["协议对接", "车队管理", "提供API"], skus: [{ name: "亚洲版(2线)", price: "￥39.00" }, { name: "全球版(4线)", price: "￥102.00" }] },
+            { id: "xc_new_8", shop: "芯跃智联", model: "XY301", category: "车载接线款", mainText: "摩托防盗", title: "4G电动车gps定位器 汽车摩托车卫星电瓶防盗车载防盗器远程断油电", sold: "20+", basePrice: 36.96, tags: ["智能报警", "4G全网通", "远程断油"], skus: [{ name: "4G版", price: "￥36.96" }, { name: "4G断油电版", price: "￥40.46" }] },
+            { id: "xc_new_9", shop: "芯跃智联", model: "XY805", category: "车载接线款", mainText: "新国标电动车", title: "gps定位器新国标电动车蓝牙锁车北斗车载定位远程追踪防盗", sold: "47", basePrice: 68.00, tags: ["蓝牙锁车", "远程鸣笛", "禁用钥匙"], skus: [{ name: "蓝牙控车", price: "￥68.00" }, { name: "+轮动检测+钥匙", price: "￥98.00" }] },
+            { id: "xc_new_10", shop: "芯跃智联", model: "XY806/807", category: "车载接线款", mainText: "智能控制终端", title: "4G智能汽车定位器 北斗卫星车载gps定位器摩托电动车防盗追踪器", sold: "16", basePrice: 85.40, tags: ["无感骑行", "轮动报警", "远程升级"], skus: [{ name: "XY807", price: "￥85.40" }, { name: "XY806", price: "￥120.40" }] },
+            { id: "xc_new_11", shop: "芯跃智联", model: "两年长待", category: "超长待机款", mainText: "两年超长待机", title: "4G汽车金融gps定位器 物流运输车载防丢器两年超长待机定位器", sold: "1", basePrice: 60.00, tags: ["智能模式", "定时定位", "无需安装"], skus: [{ name: "批量价", price: "￥60.00" }, { name: "4G版", price: "￥66.00" }] },
+            { id: "xc_new_12", shop: "芯跃智联", model: "10000mAh", category: "超长待机款", mainText: "金融风控", title: "4G汽车金融风控gps定位器车队管理车载跟踪防丢器", sold: "1", basePrice: 88.00, tags: ["待机6年", "超强磁铁", "多设备管理"], skus: [{ name: "2G版", price: "￥88.00" }, { name: "4G版", price: "￥98.00" }] },
+            { id: "xc_new_13", shop: "芯跃智联", model: "圆形徽章", category: "人员定位款", mainText: "防拆锁扣", title: "4G儿童GPS定位器 老人SOS报警学生人员防走失北斗圆形徽章防丢器", sold: "90+", basePrice: 127.80, tags: ["多重定位", "一键SOS", "双向通话"], skus: [{ name: "批量价", price: "￥127.80" }, { name: "零售价", price: "￥151.80" }] },
+            { id: "xc_new_14", shop: "芯跃智联", model: "XY800", category: "车载接线款", mainText: "4G北斗GPS", title: "4G北斗GPS定位器 接线汽车摩托车货车电动车防盗器远程断油断电", sold: "500+", basePrice: 33.60, tags: ["智能报警", "全球定位", "5套起订"], skus: [{ name: "4G版", price: "￥33.60" }, { name: "4G断油电版", price: "￥38.50" }] },
+            { id: "xc_new_15", shop: "芯跃智联", model: "锂电通用", category: "行业定制款", mainText: "锂电池防盗", title: "GPS定位器锂电池专用北斗电动车电池防盗电量显示远程控制新国标", sold: "1", basePrice: 55.00, tags: ["电量显示", "防拆断电", "位移报警"], skus: [{ name: "2线版", price: "￥55.00" }, { name: "4线+年卡", price: "￥80.00" }] },
+            { id: "xc_new_16", shop: "芯跃智联", model: "腕带款", category: "人员定位款", mainText: "老人定位手表", title: "4G儿童gps定位器双向通话SOS定位电话手表老人痴呆追踪防走丢", sold: "1", basePrice: 192.00, tags: ["精准定位", "远程通话", "一键求救"], skus: [{ name: "协议价", price: "￥192.00" }, { name: "零售单价", price: "￥238.00" }] },
+            { id: "xc_new_17", shop: "芯跃智联", model: "故障检测版", category: "OBD定位器", mainText: "OBD故障检测", title: "OBD定位器汽车载追踪追踪跟踪4G车辆防盗免安装免充电gps防走丢", sold: "5", basePrice: 133.20, tags: ["驾驶行为", "实时数据", "远程诊断"], skus: [{ name: "批量价", price: "￥133.20" }, { name: "零售价", price: "￥158.00" }] },
+            { id: "xc_new_18", shop: "芯跃智联", model: "三年长续航", category: "超长待机款", mainText: "三年超长待机", title: "4G三年超长待机gps定位器物流租赁车载管理终端3年4G强磁长续航", sold: "5", basePrice: 75.00, tags: ["光感报警", "多车管理", "强磁免安装"], skus: [{ name: "4G版", price: "￥75.00" }] },
+            { id: "xc_new_19", shop: "芯跃智联", model: "六年长续航", category: "超长待机款", mainText: "六年超长待机", title: "6年超长待机GPS定位器 强磁吸附免安装 车载跟踪定位终端高精度", sold: "1", basePrice: 150.00, tags: ["强磁吸附", "超长待机", "高精度"], skus: [{ name: "4G版", price: "￥150.00" }] },
+            { id: "xc_new_20", shop: "芯跃智联", model: "DTU-4G", category: "行业定制款", mainText: "DTU智能终端", title: "车载GPS定位器4G语音播报汽车防盗一键报警远程车队管理紧急求救", sold: "5", basePrice: 243.00, tags: ["断电报警", "485通讯", "CAN通讯"], skus: [{ name: "黑色标准版", price: "￥243.00" }] },
+            { id: "xc_new_21", shop: "芯跃智联", model: "学生卡型", category: "工牌款", mainText: "智慧校园", title: "4G全网通电子工牌校园学生卡定位器环卫工作人员gps追踪器防丢卫士", sold: "5", basePrice: 142.80, tags: ["电子工牌", "考勤管理", "OEM/ODM"], skus: [{ name: "4G版", price: "￥142.80" }] },
+            { id: "xc_new_22", shop: "芯跃智联", model: "圆形通话版", category: "人员定位款", mainText: "SOS徽章", title: "北斗gps儿童学生SOS徽章定位器通话电话手表环追踪器GPS智能", sold: "5", basePrice: 163.20, tags: ["一键导航", "多人监护", "无屏护眼"], skus: [{ name: "批量价", price: "￥163.20" }, { name: "零售价", price: "￥169.20" }] },
+            { id: "xc_new_23", shop: "芯跃智联", model: "2000mAh", category: "免安装充电款", mainText: "物流运输专用", title: "4G汽车金融gps定位器 物流运输管理 车载防丢器无线4G强磁长续航", sold: "5", basePrice: 61.80, tags: ["防拆报警", "可充电", "物流管理"], skus: [{ name: "4G版", price: "￥61.80" }] },
+            { id: "xc_new_24", shop: "芯跃智联", model: "1150mAh", category: "免安装充电款", mainText: "全球通GPS", title: "4G全球通GPS定位器 强磁免安装车辆北斗卫星定位 可充电无线GPS", sold: "5", basePrice: 43.20, tags: ["智能模式", "无需安装", "强磁吸附"], skus: [{ name: "4G版", price: "￥43.20" }] },
+            { id: "xc_new_25", shop: "芯跃智联", model: "电瓶专用", category: "行业定制款", mainText: "电瓶车防盗", title: "电动车防盗gps电瓶车定位器车辆管理追踪防盗器电瓶gps定位器智能", sold: "0", basePrice: 70.00, tags: ["远程控制", "位移报警", "防拆断电"], skus: [{ name: "协议价", price: "￥70.00" }, { name: "零售价", price: "￥78.00" }] },
+            { id: "xc_new_26", shop: "芯跃智联", model: "升窗落锁版", category: "行业定制款", mainText: "高级车联网", title: "北斗GPS定位器车载4G全网通汽车防盗追踪器4G防丢gps定位器防走丢", sold: "0", basePrice: 68.00, tags: ["升窗落锁", "远程断油电", "断电报警"], skus: [{ name: "协议价", price: "￥68.00" }, { name: "零售价", price: "￥88.00" }] },
+            { id: "xc_new_27", shop: "芯跃智联", model: "八年超长待机", category: "超长待机款", mainText: "八年长续航", title: "6年GPS定位器强磁吸附免安装车载跟踪定位终端长续航4G版超长待机", sold: "1", basePrice: 108.00, tags: ["待机8年", "免安装", "多车管理"], skus: [{ name: "协议价", price: "￥108.00" }, { name: "零售价", price: "￥128.00" }] },
+            { id: "xc_new_28", shop: "芯跃智联", model: "5000mAh", category: "免安装充电款", mainText: "汽车租赁", title: "4G强磁免安装gps定位器超长待机汽车租赁车辆车载高精度", sold: "2", basePrice: 97.80, tags: ["精准定位", "超长待机", "租赁专用"], skus: [{ name: "4G版", price: "￥97.80" }] }
         ];
 
         // Combine Data
-        const allProducts = [...rawXunmiData, ...rawAboluoData, ...rawChaoxunData, ...rawSeeworldData, ...rawTuqiangData, ...rawXinchunData, ...rawZoobiiData, ...rawXingmaiData];
+        const allProducts = [...rawXinyueData, ...rawXunmiData, ...rawAboluoData, ...rawChaoxunData, ...rawSeeworldData, ...rawTuqiangData, ...rawXinchunData, ...rawZoobiiData, ...rawXingmaiData];
 
         // === State Management ===
         let currentShop = "全部店铺";
@@ -520,12 +552,13 @@
         let myPriceChart = null;
 
         // === Helper Functions ===
-        // Ordered as requested: 全部，途强，星迈，斯沃德，阿菠萝，超寻，卓比，信春科技，寻觅
-        const shops = ["全部店铺", "途强", "星迈", "斯沃德", "阿菠萝", "超寻科技", "卓比", "信春科技", "寻觅物联"];
+        // Ordered as requested: 芯跃智联, 途强, 星迈, 斯沃德, 阿菠萝, 超寻, 卓比, 信春科技, 寻觅
+        const shops = ["全部店铺", "芯跃智联", "途强", "星迈", "斯沃德", "阿菠萝", "超寻科技", "卓比", "信春科技", "寻觅物联"];
         const shopIcons = {
             "全部店铺": "fa-store",
+            "芯跃智联": "fa-satellite", 
             "途强": "fa-shield-dog",
-            "星迈": "fa-star", // Added Star icon for Xingmai
+            "星迈": "fa-star", 
             "斯沃德": "fa-satellite-dish",
             "阿菠萝": "fa-sun",
             "超寻科技": "fa-globe-asia",
@@ -535,27 +568,25 @@
         };
         
         function getSalesNum(str) {
-            if(!str) return 0;
-            // Handle specific cases
-            let cleanStr = str.toString().replace(/\+/g, '').replace(/,/g, '').replace(/\(批\)/g, '').replace(/\(订\)/g, '').trim();
+            if (!str) return 0;
             
-            if (cleanStr === "少量" || cleanStr === "方案") return 10;
-            if (cleanStr.includes('万')) {
-                return parseFloat(cleanStr.replace(/[^\d.]/g, '')) * 10000;
-            }
-            if (cleanStr.includes('收藏') || cleanStr.includes('人想买')) {
-                 let match = cleanStr.match(/(\d+)/);
-                 return match ? parseInt(match[1]) : 0;
-            }
-            if (cleanStr.includes('评分') || cleanStr.includes('复购率') || cleanStr.includes('好评')) {
-                let match = cleanStr.match(/(\d+)/); 
-                if(match) return parseInt(match[1]);
+            let s = str.toString();
+            
+            // 1. Strict Exclude non-sales metrics
+            if (s.includes('收藏') || s.includes('想买') || s.includes('评分') || s.includes('复购') || s.includes('好评') || s.includes('库存') || s === '新品' || s === '热销' || s === '少量' || s === '方案') {
                 return 0;
             }
-            if (cleanStr === '新品') return 0;
-            if (cleanStr === '热销') return 500;
             
-            let num = parseInt(cleanStr.replace(/[^\d]/g, ''));
+            if (s === "0") return 0;
+
+            if (s.includes('万')) {
+                let numStr = s.replace(/[^\d.]/g, '');
+                return parseFloat(numStr) * 10000;
+            }
+
+            let numStr = s.replace(/[^\d]/g, '');
+            let num = parseInt(numStr);
+            
             return isNaN(num) ? 0 : num;
         }
 
@@ -567,8 +598,7 @@
                 list = list.filter(p => p.shop === currentShop);
             }
 
-            // Recalculate Categories based on Shop-Filtered list
-            // Fixed Categories Order for better UX
+            // Fixed Categories Order
             const fixedCategories = [
                 "全部", "免安装充电款", "车载接线款", "人员定位款", "工牌款", 
                 "宠物定位器", "牛羊定位器", "OBD定位器", "车充定位器", 
@@ -577,7 +607,6 @@
                 "视频智能终端", "软件平台"
             ];
             
-            // Filter available categories in current shop
             const availableCats = new Set(list.map(p => p.category));
             const activeCategories = fixedCategories.filter(c => c === "全部" || availableCats.has(c));
 
@@ -592,12 +621,11 @@
                 distributionList = distributionList.filter(p => p.category === currentCategory);
             }
 
-            // Filter by Search (Improved: Inclusive match)
+            // Filter by Search
             if (currentSearchQuery) {
                 const searchTerms = currentSearchQuery.toLowerCase().split(/\s+/).filter(t => t.length > 0);
                 distributionList = distributionList.filter(p => {
                     const text = (p.title + " " + p.model + " " + p.tags.join(" ") + " " + p.mainText).toLowerCase();
-                    // Every term must be present in the text
                     return searchTerms.every(term => text.includes(term));
                 });
             }
@@ -607,9 +635,9 @@
             if (currentPriceFilter !== 'all') {
                 displayList = displayList.filter(p => {
                     const price = p.basePrice;
-                    if (currentPriceFilter === 'entry') return price < 40; 
-                    if (currentPriceFilter === 'main') return price >= 40 && price <= 100;
-                    if (currentPriceFilter === 'high') return price > 100;
+                    if (currentPriceFilter === 'entry') return price < 50; 
+                    if (currentPriceFilter === 'main') return price >= 50 && price <= 120;
+                    if (currentPriceFilter === 'high') return price > 120;
                     return true;
                 });
             }
@@ -665,14 +693,15 @@
             });
 
             let entry = 0, main = 0, high = 0;
-            let distTotal = distList.length;
             
+            // Logic must match filterByPrice
             distList.forEach(p => {
-                if (p.basePrice < 40) entry++;
-                else if (p.basePrice <= 100) main++;
+                if (p.basePrice < 50) entry++;
+                else if (p.basePrice <= 120) main++;
                 else high++;
             });
-
+            
+            let distTotal = distList.length; 
             const entryPct = distTotal > 0 ? Math.round((entry / distTotal) * 100) : 0;
             const mainPct = distTotal > 0 ? Math.round((main / distTotal) * 100) : 0;
             const highPct = distTotal > 0 ? Math.round((high / distTotal) * 100) : 0;
@@ -703,17 +732,16 @@
             const nameSpan = document.getElementById('filter-name');
             const subTitle = document.getElementById('chart-subtitle');
 
-            let title = currentShop;
-            if(currentCategory !== '全部') title += ` > ${currentCategory}`;
+            let title = currentCategory;
             if(currentSearchQuery) title += ` + 搜索: "${currentSearchQuery}"`;
             subTitle.innerText = title;
 
             if (currentPriceFilter !== 'all') {
                 badge.classList.remove('hidden');
                 badge.classList.add('flex');
-                if(currentPriceFilter === 'entry') nameSpan.innerText = "入门引流 (<40元)";
-                if(currentPriceFilter === 'main') nameSpan.innerText = "主流热销 (40-100元)";
-                if(currentPriceFilter === 'high') nameSpan.innerText = "高端进阶 (>100元)";
+                if(currentPriceFilter === 'entry') nameSpan.innerText = "入门引流 (<50元)";
+                if(currentPriceFilter === 'main') nameSpan.innerText = "主流热销 (50-120元)";
+                if(currentPriceFilter === 'high') nameSpan.innerText = "高端进阶 (>120元)";
             } else {
                 badge.classList.add('hidden');
                 badge.classList.remove('flex');
@@ -849,7 +877,16 @@
                 } else if (p.shop === '星迈') {
                     badgeColor = 'bg-indigo-500';
                     badgeText = 'XINGMAI';
+                } else if (p.shop === '芯跃智联') {
+                    badgeColor = 'bg-cyan-600'; // New Color for Xinyue
+                    badgeText = 'XINYUE';
                 }
+
+                // Sales Display Logic
+                const salesNum = getSalesNum(p.sold);
+                const salesDisplay = salesNum > 0 
+                    ? `<span class="text-xs text-slate-400 flex items-center font-medium"><i class="fas fa-fire-alt text-rose-500 mr-1"></i> 已售 ${p.sold}</span>`
+                    : '';
 
                 return `
                 <div class="${cardClass} rounded-2xl overflow-hidden card-shadow hover:shadow-2xl transition-all duration-300 flex flex-col h-full relative group">
@@ -863,7 +900,7 @@
                         
                         <div class="flex justify-between items-center mb-2">
                             <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200 uppercase tracking-wide truncate max-w-[120px]">${p.model}</span>
-                            <span class="text-xs text-slate-400 flex items-center font-medium"><i class="fas fa-fire-alt text-rose-500 mr-1"></i> ${p.sold}</span>
+                            ${salesDisplay}
                         </div>
                         <h3 class="font-bold text-slate-800 text-sm leading-relaxed line-clamp-2 h-10 group-hover:text-blue-600 transition-colors" title="${p.title}">${p.title}</h3>
                     </div>
